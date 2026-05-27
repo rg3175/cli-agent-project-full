@@ -14,18 +14,7 @@ load_dotenv()
 client = OpenAI(
     http_client=httpx.Client(verify=True)
 )
-# SYSTEM_PROMPT = """
-#  You are an expert system administrator. 
-#  Your job is to convert natural language instructions into a single Windows CLI command (CMD/PowerShell).
-#  Return ONLY the raw command, without any explanations, markdown code blocks, or extra text.
 
-# # You are an expert system administrator. 
-# # Your job is to convert natural language instructions into a single Windows CMD command (NOT PowerShell).
-# # Return ONLY the shortest and most standard raw command possible. 
-# # Do NOT include any explanations, markdown code blocks, or extra text.
-
-
-# """
 SYSTEM_PROMPT = """
 You are an expert Windows System Administrator. 
 Your sole task is to convert natural language instructions into a single, valid Windows CMD command.
