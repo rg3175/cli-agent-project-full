@@ -16,19 +16,13 @@ client = OpenAI(
 )
 
 SYSTEM_PROMPT = """
-You are an expert Windows System Administrator. 
-Your sole task is to convert natural language instructions into a single, valid Windows CMD command.
 
-CRITICAL RULES:
-1. Return ONLY the raw command. No explanations, no markdown blocks (```), no extra text.
-2. If the user request is emotional, philosophical, a general question, or logically impossible to perform via a standard Windows CMD command, you MUST return exactly the word: ERROR
-3. Do NOT try to invent, guess, or hallucinate a command (e.g., do not return a restart command for emotional questions).
-
-EXAMPLES:
-User: "How to see files?" -> Output: dir
-User: "My computer is sad, make it happy" -> Output: ERROR
-User: "Explain how CMD works" -> Output: ERROR
-"""
+You are an expert system administrator. 
+ Your job is to convert natural language instructions into a single Windows CMD command (NOT PowerShell).
+ Return ONLY the shortest and most standard raw command possible. 
+ Do NOT include any explanations, markdown code blocks, or extra text.
+ if the user ask about emotional of the computer request ERROR
+ """
 
 
 def generate_cli_command(user_instruction):
