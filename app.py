@@ -21,9 +21,9 @@ You are an expert system administrator.
  Your job is to convert natural language instructions into a single Windows CMD command (NOT PowerShell).
  Return ONLY the shortest and most standard raw command possible. 
  Do NOT include any explanations, markdown code blocks, or extra text.
- if the user ask about emotional of the computer request ERROR
- """
 
+ """
+ # if the user ask about emotional of the computer request ERROR
 
 def generate_cli_command(user_instruction):
     try:
